@@ -4,10 +4,60 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>weatherrain</title>
+    <title>weatherRain</title>
   </head>
   <body>
-    <div id="app"></div>
+    
+    <nav class="container">
+      <h1 class="nav__logo">WeatherRain</h1>
+      <button class="settings__btn" id="settingsBtn"><!--settingsIcon--> Units <!--trayIcon--></button>
+    </nav>
+    <header class="container">
+      <p>How's the sky looking today?</p>
+      <div class="search__container">
+        <input type="text" name="search" id="searchInput" placeholder="Search for a place..." />
+        <input type="submit" value="Search" id="searchBtn">
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="weatherScreen__container">
+        <div class="mainWeather">
+          <!-- COVER BG, SPACING, ICON -->
+          <h2 id="mainWeatherTitle">Berlin, Germany</h2>
+          <p id="mainWeatherDate">Tuesday, Aug 5, 2025</p>
+          
+          <div class="mainWeatherTemperature__container">
+            <!-- sun/rain/cloudy Icon on that line-->
+            <p class="mainWeatherTemperature">20 <!-- degreeIcon --></p>
+          </div>
+        </div>
+        <div class="specsWeather__container">
+
+          <div class="specFeel" id="feel">
+            <p class="specTitle">Feels like</p>
+            <p class="specValue" id="">18<!-- degreeIcon --></p>
+          </div>
+
+          <div class="specHumidity" id="humidity">
+            <p class="specTitle">Humidity</p>
+            <p class="specValue" id="">46%</p>
+          </div>
+
+          <div class="specWind" id="wind">
+            <p class="specTitle">Wind</p>
+            <p class="specValue" id="">14 km/h</p>
+          </div>
+
+          <div class="specPrecipitation" id="precipitation">
+            <p class="specTitle">Precipitation</p>
+            <p class="specValue" id="">0 mm</p>  
+          </div>
+
+        </div>
+      </div>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
