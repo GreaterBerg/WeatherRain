@@ -3,11 +3,13 @@
   --text-w: #dcdcdc;
   --text-h: #08060d;
   --text-o: #a09fb2;
+  --text-ob: #a09fb26c;
 
   --bg: #02012b;
   --bg-second: #272441;
   --bg-input: #2e324f;
   --bg-button: #4657d9;
+  --bg-hover: #404ca6;
   --border: #e5e4e7;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -111,17 +113,30 @@ header p {
   color: var(--text);
   background-color: var(--bg-input);
   font-weight: 400;
+  transition: all .15s ease;
 }
 .search__input::placeholder {
+  transition: all .15s ease;
   color: var(--text-o);
+}
+.search__input:hover {
+  background-color: var(--bg-second);
+}
+.search__input:hover::placeholder {
+  color: var(--text-ob);
 }
 
 .search__btn {
   background-color: var(--bg-button);
   border: none;
   border-radius: .5rem;
+  transition: all .3s ease;
 }
-
+.search__btn:hover {
+  color: var(--text-o);
+  background-color: var(--bg-hover);
+  cursor: pointer;
+}
 
 /* ===== MAIN SECTION ===== */
 
@@ -243,6 +258,12 @@ main {
   }
 
   .mainWeather {
+    padding: 0 3rem;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     border-radius: 1rem;
   }
 
