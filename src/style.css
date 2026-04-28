@@ -70,10 +70,11 @@ nav {
   font-weight: 200;
 }
 
-.settings__btn {
+.github__btn {
+  text-align: center;
+  text-decoration: none;
   font-weight: 200;
-  color: var(--text);
-  width: 20%;
+  color: var(--text-w);
   background-color: var(--bg-second);
   padding: .5em;
   border: none;
@@ -251,6 +252,10 @@ main {
 /* ===== BREAKPOINTS ===== */
 
 @media (min-width: 480px) {
+
+  .mainWeather {
+    background-image: url("./assets/bg-today-large.svg");
+  }
 
   .search__container {
     flex-direction: row;

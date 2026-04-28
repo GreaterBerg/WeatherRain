@@ -24,8 +24,9 @@ cityInput.addEventListener("keydown", (enter) => {
 } )
 
 function link(city) {
+    const cityStr = city.replaceAll(" ", "")
     try { 
-        return `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        return `https://api.openweathermap.org/data/2.5/weather?q=${cityStr}&appid=${apiKey}&units=metric`;
     } catch(error) {
         console.log(`errrrrrorrr ${error}`)
     }
