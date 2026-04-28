@@ -10,8 +10,18 @@ let cityTitle = document.getElementById("mainWeatherTitle");
 cityBtn.addEventListener("click", () => {
 
     weather(link(cityInput.value))
+    cityInput.value = ""
 
 })
+
+cityInput.addEventListener("keydown", (enter) => {
+
+    if ( enter.key === "Enter" ) {
+        weather(link(cityInput.value))
+        cityInput.value = ""
+    }
+
+} )
 
 function link(city) {
     try { 
@@ -58,11 +68,11 @@ let loading = document.getElementById("loading");
 async function weather(apiLink) {
     try {
 
-        cityTitle.innerText = "Loading"
+        cityTitle.innerText = `Loading...`
 
         const response = await fetch(apiLink);
         if (!response.ok) {
-            throw new Error(`new error =]  :  ${response.status}`);
+            throw new Error(response.status);
         }
 
         const data = await response.json();
@@ -73,7 +83,11 @@ async function weather(apiLink) {
         outputTemp(data)
 
     } catch(error) {
-        cityTitle.innerText = "error"
+        if ( error.message === "404" ) {
+            cityTitle.innerText = "City not found"
+        } else if ( error.message === "400" ) {
+            cityTitle.innerText = "Enter your city"
+        }
         console.log("new error =] ", error)
     }
 }
